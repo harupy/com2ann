@@ -832,6 +832,7 @@ def translate_file(infile: str, outfile: str, options: Options) -> None:
 
 
 def main() -> None:
+    # Add a comment to make sure this tweaked version is used.
     print("--- Disable fixing variable annotations ---")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("-o", "--outfile",
