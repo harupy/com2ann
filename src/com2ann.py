@@ -696,10 +696,10 @@ def com2ann_impl(data: FileData, drop_none: bool, drop_ellipsis: bool,
 
     # Perform translations in reverse order to avoid shuffling line numbers.
     for item in found:
-        if isinstance(item, AssignData):
-            process_assign(item, data, drop_none, drop_ellipsis)
-            data.success.append(item.lvalue_end_line)
-        elif isinstance(item, FunctionData):
+        # if isinstance(item, AssignData):
+        #     process_assign(item, data, drop_none, drop_ellipsis)
+        #     data.success.append(item.lvalue_end_line)
+        if isinstance(item, FunctionData):
             process_func_def(item, data, wrap_sig)
             data.success.append(item.header_start_line)
 
