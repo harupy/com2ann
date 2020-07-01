@@ -832,8 +832,6 @@ def translate_file(infile: str, outfile: str, options: Options) -> None:
 
 
 def main() -> None:
-    # Add a comment to make sure this tweaked version is used.
-    print("--- Disable fixing variable annotations ---")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("-o", "--outfile",
                         help="output file or directory, will be overwritten if exists,\n"
@@ -892,6 +890,9 @@ def main() -> None:
                     file_name = os.path.join(root, file)
                     out_file_name = os.path.join(out_root, file)
                     translate_file(file_name, out_file_name, options)
+
+    # Add a comment to make sure this tweaked version is used.
+    print("--- Type comments on variables are not fixed ---")
 
 
 if __name__ == '__main__':
